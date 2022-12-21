@@ -53,7 +53,8 @@
                                             @endcan
                                             @can('delete-post')
                                                 <form method="POST" action="{{ route('post.destroy', $post->id) }}"
-                                                    class="inline">
+                                                    class="inline"
+                                                    onsubmit="return confirm('Are you sure you want to delete?')">
                                                     @csrf @method('Delete')
                                                     <button type="submit"
                                                         class="border border-solid border-black px-2 py-1 bg-gray-900 text-white rounded-md cursor-pointer ml-2">Delete</button>
